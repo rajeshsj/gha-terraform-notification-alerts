@@ -19,8 +19,6 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      #- uses: actions/checkout@v3
       
     - id: 'auth'
       uses: 'google-github-actions/auth@v1'
@@ -35,3 +33,9 @@ jobs:
 
     - name: 'Use gcloud CLI'
       run: 'gcloud info'
+      
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v3  
+    
+    - name: terraform execution
+      run: terraform init -backend-config=prefix= test-tf-gha/notification-setup/ -reconfigure
