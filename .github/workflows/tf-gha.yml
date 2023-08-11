@@ -40,5 +40,8 @@ jobs:
     - name: terraform version
       run: terraform version
     
-    - name: terraform execution
+    - name: terraform Init
       run: terraform init -input=false
+
+    - name: terraform execution
+      run: terraform plan
