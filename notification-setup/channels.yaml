@@ -1,0 +1,18 @@
+# Supported types: ["webhook", "slack", "email", "sms", "pubsub"]
+
+webhook:
+- display_name: Webhook
+  url: https://example.com/api/v1/webhook/hiimatoken123
+- display_name: Webhook with basic auth
+  url: https://example.com/api/v1/webhook/
+  username: pelle_svanslos
+  password: majaGräddnos123
+
+email:
+- email_address: Retail.CS.EngOps@albertsons.com
+  user_labels: # Add custom labels to this NC
+    clan: retailengops
+
+sms:
+- display_name: Pelle Svanslös
+  number: "+46701234567"
