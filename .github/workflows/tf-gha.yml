@@ -47,4 +47,4 @@ jobs:
       run: terraform init -input=false
 
     - name: terraform execution
-      run: terraform plan
+      run: notification-setup/terraform plan
