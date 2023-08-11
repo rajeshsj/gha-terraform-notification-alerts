@@ -8,7 +8,7 @@ on:
 
 env:
   TERRAFORM_VERSION: 1.3.7
-  WORKING_DIR: ~/test-tf-gha/notification-setuo
+  WORKING_DIR: ~/test-tf-gha/notification-setup
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
