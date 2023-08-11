@@ -36,6 +36,9 @@ jobs:
       
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v3  
+
+    - name: terraform version
+      run: terraform version
     
     - name: terraform execution
-      run: terraform init -backend-config=prefix= notification-setup/ -reconfigure
+      run: terraform init -input=false
