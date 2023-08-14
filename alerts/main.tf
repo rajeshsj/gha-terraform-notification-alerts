@@ -1,6 +1,6 @@
 module "alert" {
   source                         = "../"
-  project                        = "gcp-abs-svav-dev-prj-01"
+  project                        = "test-project-dec19"
   policies                       = yamldecode(file("alerts.yaml"))
   fallback_notification_channels = ["fallback-channel", "projects/gcp-abs-svav-dev-prj-01/notificationChannels/17965452668816064174"]
   notification_channel_ids = {
