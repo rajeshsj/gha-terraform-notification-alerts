@@ -114,9 +114,6 @@ jobs:
   
       - name: 'Use gcloud CLI'
         run: 'gcloud info'
-  
-      - name: terraform Init
-        run: terraform init
       
       - name: terraform destroy
         run: terraform destroy -auto-approve
