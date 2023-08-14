@@ -44,9 +44,9 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v3
 
-    - name: Unset Impersonation
-      run: |
-        gcloud config unset auth/impersonate_service_account
+    # - name: Unset Impersonation
+    #   run: |
+    #     gcloud config unset auth/impersonate_service_account
     
     #- id: 'auth'
     #  uses: 'google-github-actions/auth@v1'
