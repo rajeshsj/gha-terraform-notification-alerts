@@ -10,12 +10,12 @@ on:
         description: 'Select the Terraform Action'
       tf-apply:
         type: boolean
-        description: 'Apply the Alerts'
+        description: 'Create Notification Channel'
         required: false
         default: false
       tf-destroy:
         type: boolean
-        description: 'Destroy the Alerts'
+        description: 'Remove Notification Channel'
         required: false
         default: false
 
