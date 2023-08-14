@@ -9,9 +9,9 @@ webhook:
   password: jasgcsagksdhksa
 
 email:
-- email_address: rajchand@gmail.com
+- email_address: testmail@gmail.com
   user_labels: # Add custom labels to this NC
-    clan: retailengops
+    clan: devops
 
 sms:
 - display_name: raj varma
