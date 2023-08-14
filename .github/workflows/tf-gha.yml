@@ -62,7 +62,7 @@ jobs:
 
     - id: 'setup-gcloud'
       name: 'setup-gcloud'
-      uses: 'google-github-actions/setup-gcloud@main'
+      uses: 'google-github-actions/setup-gcloud@v1'
 
     - name: 'Use gcloud CLI'
       run: 'gcloud info'
@@ -76,8 +76,8 @@ jobs:
     - name: terraform execution
       run: terraform plan
 
-    - name: terraform Apply
-      run: terraform apply -auto-approve -input=false
+    # - name: terraform Apply
+    #   run: terraform apply -auto-approve -input=false
 
   Terraform-destroy:
       if: success() && github.event.inputs.tf-destroy == 'true'
