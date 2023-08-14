@@ -21,7 +21,7 @@ on:
 
 env:
   TERRAFORM_VERSION: 1.5.5
-  WORKING_DIR: notification-setup
+  WORKING_DIR: alerts
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
