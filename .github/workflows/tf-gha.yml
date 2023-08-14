@@ -51,15 +51,16 @@ jobs:
     - id: 'auth'
       uses: 'google-github-actions/auth@v1'
       with:
-        create_credentials_file: true
-        workload_identity_provider: 'projects/test-project-dec19/locations/global/workloadIdentityPools/ my-pool-wl/providers/ my-provider-wl'
-        service_account: 'test-gha-pipeline-tf@test-project-dec19.iam.gserviceaccount.com'
-        #credentials_json: ${{ secrets.SVC_TF_GHA_ACCESS_KEY }}
+        #create_credentials_file: true
+        #workload_identity_provider: 'projects/test-project-dec19/locations/global/workloadIdentityPools/ my-pool-wl/providers/ my-provider-wl'
+        #service_account: 'test-gha-pipeline-tf@test-project-dec19.iam.gserviceaccount.com'
+        credentials_json: '${{ secrets.SVC_TF_GHA_ACCESS_KEY }}'
   
     - name: 'Set up Cloud SDK'
       uses: 'google-github-actions/setup-gcloud@v1'
       with:
         version: '>= 363.0.0'
+        project_id: 'test-project-dec19'
 
     - id: 'setup-gcloud'
       name: 'setup-gcloud'
