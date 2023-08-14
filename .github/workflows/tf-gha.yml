@@ -116,7 +116,7 @@ jobs:
         run: 'gcloud info'
   
       - name: terraform Init
-        run: terraform init -input=false
+        run: terraform init
       
       - name: terraform destroy
-        run: terraform destroy -auto-approve -input=false
+        run: terraform destroy -auto-approve
