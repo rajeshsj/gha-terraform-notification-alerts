@@ -51,7 +51,8 @@ jobs:
     - id: 'auth'
       uses: 'google-github-actions/auth@v1'
       with:
-        workload_identity_provider: 'https://iam.googleapis.com/projects/419910933658/locations/global/workloadIdentityPools/my-pool/providers/my-provider'
+        create_credentials_file: true
+        workload_identity_provider: 'projects/test-project-dec19/locations/global/workloadIdentityPools/ my-pool-wl/providers/ my-provider-wl'
         service_account: 'test-gha-pipeline-tf@test-project-dec19.iam.gserviceaccount.com'
         #credentials_json: ${{ secrets.SVC_TF_GHA_ACCESS_KEY }}
   
