@@ -1,10 +1,16 @@
-module "notification_channels" {
-  source                        = "../"
-  project                       = "test-project-dec19"
-  notification_channels         = yamldecode(file("channels.yaml"))
-  #slack_token_secret_project_id = "my-project-123" # Optional; to provide token with gcp stored secret
-  #slack_token_secret_name       = "my-slack-token" # Optional; to provide token with gcp stored secret
+module "alert" {
+  source                         = "../"
+  project                        = "gcp-abs-svav-dev-prj-01"
+  policies                       = yamldecode(file("alerts.yaml"))
+  fallback_notification_channels = ["fallback-channel", "projects/gcp-abs-svav-dev-prj-01/notificationChannels/17965452668816064174"]
+  notification_channel_ids = {
+    "fallback-channel" : "projects/gcp-abs-svav-dev-prj-01/notificationChannels/17965452668816064174",
+    notification_channel : "projects/gcp-abs-svav-dev-prj-01/notificationChannels/17965452668816064174"
+  }
+
   default_user_labels = {
-    example = "all-alerts-will-have-this-label"
+    cc = "all-alerts-will-have-this-label"
   }
 }
+
+
