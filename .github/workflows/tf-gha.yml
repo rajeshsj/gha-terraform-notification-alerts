@@ -53,7 +53,7 @@ jobs:
       with:
         #workload_identity_provider: 'projects/test-project-dec19/locations/global/workloadIdentityPools/my-pool/providers/my-provider'
         service_account: 'svc-api@test-project-dec19.iam.gserviceaccount.com'
-        credentials_json: ${{ secrets.SVC_TF_GHA_KEY }}
+        credentials_json: '${{ secrets.SVC_TF_GHA_KEY }}'
   
     - name: 'Set up Cloud SDK'
       uses: 'google-github-actions/setup-gcloud@v1'
