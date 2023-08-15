@@ -70,9 +70,6 @@ jobs:
     - name: 'Use gcloud CLI'
       run: 'gcloud info'
 
-    - name: list notify
-      run: 'gcloud beta monitoring channels list'
-
     - name: terraform version
       run: terraform version
     
