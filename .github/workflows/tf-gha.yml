@@ -68,7 +68,7 @@ jobs:
       uses: 'google-github-actions/setup-gcloud@v1'
 
     - name: 'Use gcloud CLI'
-      run: 'gcloud info'
+      run: 'gcloud beta monitoring channels list'
 
     - name: terraform version
       run: terraform version
