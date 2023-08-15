@@ -10,8 +10,7 @@
 
 email:
 - email_address: test-mail@gmail.com
-- display_name: email-id
-  user_labels: # Add custom labels to this NC
+  user_labels: email-id # Add custom labels to this NC
     clan: devops
 
 # sms:
