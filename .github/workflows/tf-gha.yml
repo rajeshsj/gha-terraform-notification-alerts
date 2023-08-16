@@ -98,8 +98,8 @@ jobs:
 
     - name: terraform Apply
       run:  |
-        #terraform show "tf_plan" 
-        terraform apply "tf_plan" -auto-approve -input=false
+        terraform show "tf_plan" 
+        terraform apply "tf_plan"
 
   Terraform-destroy:
       if: success() && github.event.inputs.tf-destroy == 'true'
