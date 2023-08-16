@@ -9,7 +9,7 @@
 #   password: jasgcsagksdhksa
 
 email:
-- email_address: test-mail@gmail.com
+- email_address: raj_s37@testmail.com
   user_labels: # Add custom labels to this NC
     clan: devops
 
