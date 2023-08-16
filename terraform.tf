@@ -13,6 +13,6 @@ terraform {
 }
 
 provider "google" {
-  project = var.project
-  region  = var.region
+  project = "test-project-dec19"
+  region  = "us-west1"
 }
