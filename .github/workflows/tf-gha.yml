@@ -98,7 +98,7 @@ jobs:
 
     - name: terraform Apply
       run:  |
-        terraform show "tf_plan" 
+        #terraform show "tf_plan" 
         terraform apply "tf_plan" -auto-approve -input=false
 
   Terraform-destroy:
