@@ -145,7 +145,6 @@ jobs:
       - name: Terraform plan
         run: |
           terraform show "tf_plan"
-          terraform apply "tf_plan"
       
       - name: terraform destroy
         run: terraform destroy -auto-approve
