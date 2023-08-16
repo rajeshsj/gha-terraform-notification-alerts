@@ -5,13 +5,3 @@ terraform {
     google = ">= 4.0"
   }
 }
-backend "gcs" {
-    bucket = "test1-data" # need to update with the bucket name
-    prefix = "state"
-  }
-}
-
-provider "google" {
-  project = var.project
-  region  = var.region
-}
