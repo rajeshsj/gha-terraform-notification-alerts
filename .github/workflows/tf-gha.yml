@@ -97,8 +97,8 @@ jobs:
         retention-days: 1
 
     - name: terraform Apply
-      run:  terraform show "tf_plan" 
-            terraform apply  "tf_plan" -auto-approve -input=false
+      run: terraform show "tf_plan" 
+           terraform apply "tf_plan" -auto-approve -input=false
 
   Terraform-destroy:
       if: success() && github.event.inputs.tf-destroy == 'true'
