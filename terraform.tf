@@ -7,7 +7,7 @@ terraform {
   }
 
   backend "gcs" {
-    bucket = "test-project-dec19-terraform" # need to update with the bucket name
+    bucket = "test1-data" # need to update with the bucket name
     prefix = "state"
   }
 }
