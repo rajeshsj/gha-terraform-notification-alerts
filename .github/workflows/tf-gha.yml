@@ -77,7 +77,24 @@ jobs:
       run: terraform init -input=false
 
     - name: terraform execution
-      run: terraform plan
+      run:  |
+              # exit if any of the commands fails
+              set -o errexit
+        
+              # checking and deleting any old tf_plan file
+              if [ -f "tf_plan" ]; 
+                then
+                  rm "tf_plan"
+              fi
+              terraform plan -out "tf_plan" -input=false
+
+    - name: Upload TF Plan
+      uses: actions/upload-artifact@v2
+      with:
+        name: tf_plan
+        path: ./examples/tf_plan
+        if-no-files-found: error
+        retention-days: 1
 
     - name: terraform Apply
       run: terraform apply -auto-approve -input=false
@@ -117,6 +134,17 @@ jobs:
       
       - name: terraform init
         run: terraform init
+
+      - name: Download TF Plan
+        uses: actions/download-artifact@v2
+        with:
+          name: tf_plan
+          path: ./examples
+
+      - name: Terraform plan
+        run: |
+          terraform show "tf_plan"
+          terraform apply "tf_plan"
       
       - name: terraform destroy
         run: terraform destroy -auto-approve
