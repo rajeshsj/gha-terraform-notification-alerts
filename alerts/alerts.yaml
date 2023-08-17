@@ -1,4 +1,4 @@
-- display_name: Log matched alert
+- display_name: Log matched alert -500
   conditions:
   - display_name: Log match
     condition_matched_log:
