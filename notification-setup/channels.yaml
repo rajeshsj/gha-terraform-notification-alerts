@@ -9,10 +9,10 @@
 #   password: jasgcsagksdhksa
 
 email:
-- email_address: raj_s37@testmail.com
+- email_address: abcd@testmail.com
   user_labels: # Add custom labels to this NC
     clan: devops
 
 # sms:
-# - display_name: raj varma
-#   number: "+46701234567"
+- display_name: raj varma
+  number: "+46701234567"
