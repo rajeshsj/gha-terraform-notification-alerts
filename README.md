@@ -1,4 +1,4 @@
-#gha-terraform-notification-alerts
+#gha-terraform-notification
 
 ## Inputs
 
