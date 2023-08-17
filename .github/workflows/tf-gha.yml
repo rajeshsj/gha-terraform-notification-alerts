@@ -76,30 +76,31 @@ jobs:
     - name: terraform Init
       run: terraform init -input=false
 
-    - name: terraform execution
-      run:  |
-              # exit if any of the commands fails
-              set -o errexit
+    # - name: terraform execution
+    #   run:  |
+    #           # exit if any of the commands fails
+    #           set -o errexit
         
-              # checking and deleting any old tf_plan file
-              if [ -f "tf_plan" ]; 
-                then
-                  rm "tf_plan"
-              fi
-              terraform plan -out "tf_plan" -input=false
+    #           # checking and deleting any old tf_plan file
+    #           if [ -f "tf_plan" ]; 
+    #             then
+    #               rm "tf_plan"
+    #           fi
+    #           terraform plan -out "tf_plan" -input=false
 
-    - name: Upload TF Plan
-      uses: actions/upload-artifact@v2
-      with:
-        name: tf_plan
-        path: ./notification-setup/tf_plan
-        if-no-files-found: error
-        retention-days: 1
+    # - name: Upload TF Plan
+    #   uses: actions/upload-artifact@v2
+    #   with:
+    #     name: tf_plan
+    #     path: ./notification-setup/tf_plan
+    #     if-no-files-found: error
+    #     retention-days: 1
 
+    - name: Terraform plan
+      run: terraform plan
+        
     - name: terraform Apply
-      run:  |
-        terraform show "tf_plan" 
-        terraform apply "tf_plan"
+      run:  terraform apply
 
   Terraform-destroy:
       if: success() && github.event.inputs.tf-destroy == 'true'
