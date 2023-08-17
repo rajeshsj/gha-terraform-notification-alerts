@@ -26,7 +26,7 @@ env:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "Terraform Apply"
-  Terraform-Apply:
+  Alerts-Creation-Terraform:
     if: success() && github.event.inputs.tf-apply == 'true'
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
@@ -82,7 +82,7 @@ jobs:
     - name: terraform Apply
       run: terraform apply -auto-approve -input=false
 
-  Terraform-destroy:
+  Alerts-Remove-Terraform:
       if: success() && github.event.inputs.tf-destroy == 'true'
       # The type of runner that the job will run on
       runs-on: ubuntu-latest
