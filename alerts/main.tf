@@ -2,10 +2,10 @@ module "alert" {
   source                         = "../"
   project                        = "test-project-dec19"
   policies                       = yamldecode(file("alerts.yaml"))
-  fallback_notification_channels = ["fallback-channel", "projects/test-project-dec19/notificationChannels/3724167854890262815"]
+  fallback_notification_channels = ["fallback-channel", "projects/test-project-dec19/notificationChannels/8026202800160087350"]
   notification_channel_ids = {
-    "fallback-channel" : "projects/test-project-dec19/notificationChannels/3724167854890262815",
-    notification_channel : "projects/test-project-dec19/notificationChannels/3724167854890262815"
+    "fallback-channel" : "projects/test-project-dec19/notificationChannels/8026202800160087350",
+    notification_channel : "projects/test-project-dec19/notificationChannels/8026202800160087350"
   }
 
   default_user_labels = {
