@@ -13,6 +13,6 @@ email:
   user_labels: # Add custom labels to this NC
     clan: devops
 
-# sms:
+sms:
 - display_name: raj varma
   number: "+46701234567"
