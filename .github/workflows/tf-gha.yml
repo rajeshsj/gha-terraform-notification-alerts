@@ -100,7 +100,7 @@ jobs:
       run: terraform plan
         
     - name: terraform Apply
-      run:  terraform apply
+      run:  terraform apply -auto-approve
 
   Terraform-destroy:
       if: success() && github.event.inputs.tf-destroy == 'true'
