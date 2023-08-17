@@ -6,8 +6,6 @@ name: Monitoring - Notification / Alerts
 on:
   workflow_dispatch:
      inputs:
-      message:
-        description: 'Select the Terraform Action'
       tf-apply:
         type: boolean
         description: 'Apply the Alerts'
