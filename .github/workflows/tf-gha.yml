@@ -82,7 +82,7 @@ jobs:
     - name: terraform Apply
       run: terraform apply -auto-approve -input=false
 
-  Alerts-Remove-Terraform:
+  Alerts-Remove-Terraform: # TO BE RESEACRHED
       if: success() && github.event.inputs.tf-destroy == 'true'
       # The type of runner that the job will run on
       runs-on: ubuntu-latest
