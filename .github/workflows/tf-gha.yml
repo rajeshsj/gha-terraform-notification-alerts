@@ -24,7 +24,7 @@ env:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "Terraform Apply"
-  Alerts-Creation-Terraform:
+  Alerts-Creation:
     if: success() && github.event.inputs.tf-apply == 'true'
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
@@ -49,18 +49,15 @@ jobs:
     - id: 'auth'
       uses: 'google-github-actions/auth@v1'
       with:
-        #create_credentials_file: true
-        #workload_identity_provider: 'projects/419910933658/locations/global/workloadIdentityPools/ my-pool-gcp/providers/ my-provider-gcp'
-        #service_account: 'test-gha-pipeline-tf@test-project-dec19.iam.gserviceaccount.com'
-        credentials_json: ${{ secrets.SVC_TF_GHA_ACCESS_KEY }}
+        credentials_json: ${{ secrets.<SA-KEY>}}
   
     - name: 'Set up Cloud SDK'
       uses: 'google-github-actions/setup-gcloud@v1'
       with:
         version: '>= 363.0.0'
-        project_id: 'test-project-dec19'
-        service_account: 'test-gha-pipeline-tf@test-project-dec19.iam.gserviceaccount.com'
-
+        project_id: '<Project-Id>'
+        service_account: 'sa@<project-id>-dec19.iam.gserviceaccount.com'
+        
     - id: 'setup-gcloud'
       name: 'setup-gcloud'
       uses: 'google-github-actions/setup-gcloud@v1'
@@ -80,7 +77,7 @@ jobs:
     - name: terraform Apply
       run: terraform apply -auto-approve -input=false
 
-  Alerts-Remove-Terraform: # TO BE RESEACRHED
+  Alerts-Destroy: # TO BE RESEACRHED
       if: success() && github.event.inputs.tf-destroy == 'true'
       # The type of runner that the job will run on
       runs-on: ubuntu-latest
@@ -101,14 +98,14 @@ jobs:
       - id: 'auth'
         uses: 'google-github-actions/auth@v1'
         with:
-          credentials_json: ${{ secrets.SVC_TF_GHA_ACCESS_KEY }}
+          credentials_json: ${{ secrets.<SA-KEY> }}
   
       - name: 'Set up Cloud SDK'
         uses: 'google-github-actions/setup-gcloud@v1'
         with:
           version: '>= 363.0.0'
-          project_id: 'test-project-dec19'
-          service_account: 'test-gha-pipeline-tf@test-project-dec19.iam.gserviceaccount.com'
+          project_id: '<Project-Id>'
+          service_account: 'sa@<project-id>-dec19.iam.gserviceaccount.com'
   
       - name: 'Use gcloud CLI'
         run: 'gcloud info'
